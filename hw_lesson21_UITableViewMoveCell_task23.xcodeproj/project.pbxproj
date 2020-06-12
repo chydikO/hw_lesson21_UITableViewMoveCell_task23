@@ -13,6 +13,7 @@
 		AF02BD122493A75E0078812E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AF02BD102493A75E0078812E /* Main.storyboard */; };
 		AF02BD142493A75F0078812E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AF02BD132493A75F0078812E /* Assets.xcassets */; };
 		AF02BD172493A75F0078812E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AF02BD152493A75F0078812E /* LaunchScreen.storyboard */; };
+		AF02BD202493AA470078812E /* TestData.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF02BD1F2493AA470078812E /* TestData.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +25,7 @@
 		AF02BD132493A75F0078812E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		AF02BD162493A75F0078812E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		AF02BD182493A75F0078812E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		AF02BD1F2493AA470078812E /* TestData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestData.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,6 +58,7 @@
 		AF02BD092493A75E0078812E /* hw_lesson21_UITableViewMoveCell_task23 */ = {
 			isa = PBXGroup;
 			children = (
+				AF02BD1E2493A9F90078812E /* Model */,
 				AF02BD0A2493A75E0078812E /* AppDelegate.swift */,
 				AF02BD0C2493A75E0078812E /* SceneDelegate.swift */,
 				AF02BD0E2493A75E0078812E /* ViewController.swift */,
@@ -65,6 +68,14 @@
 				AF02BD182493A75F0078812E /* Info.plist */,
 			);
 			path = hw_lesson21_UITableViewMoveCell_task23;
+			sourceTree = "<group>";
+		};
+		AF02BD1E2493A9F90078812E /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				AF02BD1F2493AA470078812E /* TestData.swift */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -141,6 +152,7 @@
 				AF02BD0F2493A75E0078812E /* ViewController.swift in Sources */,
 				AF02BD0B2493A75E0078812E /* AppDelegate.swift in Sources */,
 				AF02BD0D2493A75E0078812E /* SceneDelegate.swift in Sources */,
+				AF02BD202493AA470078812E /* TestData.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
