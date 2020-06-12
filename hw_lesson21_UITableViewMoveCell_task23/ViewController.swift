@@ -24,7 +24,7 @@ class ViewController: UIViewController {
 
         //setupNavigationButtons()
         setupTableView()
-        dataSource.append(contentsOf: TestData.makeTestData(20))
+        dataSource.append(contentsOf: TestData.makeTestData(30))
 
     }
     

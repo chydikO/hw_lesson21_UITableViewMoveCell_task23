@@ -10,6 +10,7 @@ import Foundation
 
 class TestData  {
     static func makeTestData(_ n: Int) -> [String] {
-        return (0..<n).map{ _ in Int(arc4random_uniform(20) + 1) }.removingDuplicates().sorted().map(){String($0)}
+        let array = (0..<n).map{ _ in Int(arc4random_uniform(20) + 1) }.removingDuplicates().sorted().map(){String($0)}
+        return array.count > 10 ? array.dropLast(array.count - 10) : array
     }
 }

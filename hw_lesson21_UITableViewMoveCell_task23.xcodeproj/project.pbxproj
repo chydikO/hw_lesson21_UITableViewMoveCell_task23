@@ -66,8 +66,8 @@
 		AF02BD092493A75E0078812E /* hw_lesson21_UITableViewMoveCell_task23 */ = {
 			isa = PBXGroup;
 			children = (
-				AF02BD262493B3050078812E /* Cell */,
 				AF02BD0A2493A75E0078812E /* AppDelegate.swift */,
+				AF02BD262493B3050078812E /* Cell */,
 				AF02BD232493B1210078812E /* Common */,
 				AF02BD1E2493A9F90078812E /* Model */,
 				AF02BD0E2493A75E0078812E /* ViewController.swift */,
