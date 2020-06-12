@@ -10,6 +10,6 @@ import Foundation
 
 class TestData  {
     static func makeTestData(_ n: Int) -> [String] {
-        return (0..<n).map{ _ in Int(arc4random_uniform(20) + 1) }.sorted().map(){String($0)}
+        return (0..<n).map{ _ in Int(arc4random_uniform(20) + 1) }.removingDuplicates().sorted().map(){String($0)}
     }
 }
