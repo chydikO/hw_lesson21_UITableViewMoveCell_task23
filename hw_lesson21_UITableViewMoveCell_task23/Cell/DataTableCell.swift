@@ -12,7 +12,7 @@ class DataTableCell: UITableViewCell {
 
     @IBOutlet var contentLable: UILabel?
     @IBOutlet var separated: UIView?
-    
+        
     var data: String? {
         didSet {
             if let content = self.data {

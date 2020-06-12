@@ -13,6 +13,7 @@ class ViewController: UIViewController {
     var dataSource = [Any]()
     
     @IBOutlet var tableView: UITableView?
+    
     var tableViewStyle: UITableView.Style {
         return .plain
     }
@@ -22,7 +23,7 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         view.backgroundColor = .groupTableViewBackground
 
-        //setupNavigationButtons()
+        setupNavigationButtons()
         setupTableView()
         dataSource.append(contentsOf: TestData.makeTestData(30))
 
@@ -67,7 +68,7 @@ class ViewController: UIViewController {
        func setupNavigationButtons() {
 
            // если текущий рутовый контролер
-           // добавляем кнопку "ИНФО"
+           // добавляем кнопку
            if self == self.navigationController?.viewControllers.first as? ViewController {
                // create back button
                self.navigationItem.rightBarButtonItem = self.createRightButton()
@@ -75,7 +76,7 @@ class ViewController: UIViewController {
        }
        
        func createRightButton() -> UIBarButtonItem? {
-           let rightButton = UIBarButtonItem(image: UIImage(named: "icons8-go-back-48"),
+           let rightButton = UIBarButtonItem(image: UIImage(named: "icons8-edit-50"),
                                             style: UIBarButtonItem.Style.done,
                                             target: self,
                                             action: #selector(rightButtonClicked))
@@ -84,8 +85,11 @@ class ViewController: UIViewController {
        
        
        @IBAction func rightButtonClicked() {
-        
-       }
+        if let isEditing = tableView?.isEditing {
+             tableView?.setEditing(!isEditing, animated: true)
+            setButtonTitle()
+        }
+    }
 }
 
 //MARK: - UITableViewDataSource, UITableViewDelegate
@@ -114,5 +118,31 @@ extension ViewController: UITableViewDataSource, UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, estimatedHeightForRowAt indexPath: IndexPath) -> CGFloat {
         return 100
+    }
+    
+    //---------------------Remove red buttom while tableView editing
+    func tableView(_ tableView: UITableView, editingStyleForRowAt indexPath: IndexPath) -> UITableViewCell.EditingStyle {
+        return .none
+    }
+    
+    func tableView(_ tableView: UITableView, shouldIndentWhileEditingRowAt indexPath: IndexPath) -> Bool {
+        return false
+    }
+    //---------------------Remove red buttom while tableView editing
+    
+    func tableView(_ tableView: UITableView, canMoveRowAt indexPath: IndexPath) -> Bool {
+        return true
+    }
+    
+    func tableView(_ tableView: UITableView, moveRowAt sourceIndexPath: IndexPath, to destinationIndexPath: IndexPath) {
+        //change DataSource
+        let model = dataSource[sourceIndexPath.row]
+        dataSource.remove(at: sourceIndexPath.row)
+        dataSource.insert(model, at: destinationIndexPath.row)
+        self.tableView?.reloadData()
+    }
+    
+    private func setButtonTitle() {
+        self.navigationItem.rightBarButtonItem?.image = tableView?.isEditing == false ? UIImage(named:"icons8-edit-50") : UIImage(named:"icons8-checkmark-52")
     }
 }

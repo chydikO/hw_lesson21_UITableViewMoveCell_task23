@@ -6,7 +6,7 @@
 //  Copyright © 2020 Олег Чудновский. All rights reserved.
 //
 
-import Foundation
+import UIKit
 
 extension Array where Element: Hashable {
     func removingDuplicates() -> [Element] {
