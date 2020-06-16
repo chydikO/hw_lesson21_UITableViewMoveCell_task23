@@ -22,18 +22,15 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = .groupTableViewBackground
-
+        self.navigationItem.title = "Move you Cell"
+        
         setupNavigationButtons()
         setupTableView()
         dataSource.append(contentsOf: TestData.makeTestData(30))
 
     }
     
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
-        self.navigationItem.title = "Move you Cell"
-    }
-
+    
     //MARK: -Setup TableView
     private func setupTableView() {
         if self.tableView == nil {
@@ -65,16 +62,12 @@ class ViewController: UIViewController {
     }
     
     //MARK: - NavigationButtons
-       func setupNavigationButtons() {
-
-           // если текущий рутовый контролер
-           // добавляем кнопку
-           if self == self.navigationController?.viewControllers.first as? ViewController {
-               // create back button
-               self.navigationItem.rightBarButtonItem = self.createRightButton()
-           }
-       }
-       
+    func setupNavigationButtons() {
+        // create back button
+        self.navigationItem.rightBarButtonItem = self.createRightButton()
+        
+    }
+    
        func createRightButton() -> UIBarButtonItem? {
            let rightButton = UIBarButtonItem(image: UIImage(named: "icons8-edit-50"),
                                             style: UIBarButtonItem.Style.done,
